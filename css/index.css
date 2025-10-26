@@ -1,6 +1,7 @@
 body{
     margin: 0;
-    transition: background-color 0.5s ease, color 0.5s ease; /* 🎨 transition douce */
+    transition: background-color 0.5s ease, color 0.5s ease;
+    font-family: 'Nunito Sans', sans-serif;
 }
 
 header{
@@ -14,6 +15,7 @@ header{
     justify-content: space-around;
     align-items: center;
     width: 100%;
+    font-family: 'Poppins', sans-serif;
 }
 
 .page{
@@ -56,4 +58,9 @@ img{
 .nuit{
     color: aliceblue;
     background-color: black;
+}
+
+a{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
 }
