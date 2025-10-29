@@ -53,6 +53,16 @@ header{
     align-items: center;
     width: 100%;
 }
+.surligne-jour{
+    background-color: #0e131f; 
+    padding: 3px; 
+    color: #f0e8d5;
+}
+.surligne-nuit{
+    background-color: #f0e8d5; 
+    padding: 3px; 
+    color: #0e131f;
+}
 
 img{
   width: 400px; 
@@ -114,7 +124,6 @@ a{
     margin-left: 20px;
 }
 
-
 .page2{
     display: flex;
     flex-direction: column;
@@ -127,6 +136,7 @@ a{
     display: flex;
     flex-direction: row;
     justify-content: center;
+    border-top: 2px solid #fff;
 }
 
 .exp div{
@@ -136,7 +146,6 @@ a{
     align-items: center;
     padding-left: 100px;
     padding-right: 100px;
-    border-top: 2px solid #fff;
 }
 
 .date-exp{
