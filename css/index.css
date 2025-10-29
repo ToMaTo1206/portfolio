@@ -19,12 +19,13 @@ header{
 .toolbar{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
     width: 100%;
-    font-family: 'Poppins', sans-serif;
-
+    font-family: 'Montserrat', sans-serif;
+    justify-content: center;
+    align-items: center;
+    gap: 4%;
 }
+
 
 .page{
     display: flex;
@@ -38,10 +39,7 @@ header{
     justify-content: center;
     flex-grow: 1;
 }
-.page2{
-    display: flex;
-    flex-grow: 1;
-}
+
 .page3{
     display: flex;
     flex-grow: 1;
@@ -114,4 +112,41 @@ a{
 
 .presentation p{
     margin-left: 20px;
+}
+
+
+.page2{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 20px;
+    align-items: center;
+}
+
+.exp{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.exp div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: 100px;
+    padding-right: 100px;
+    border-top: 2px solid #fff;
+}
+
+.date-exp{
+    font-family: 'Montserrat', sans-serif;
+    font-style: italic;
+    font-weight: 700;
+    border: 2px solid #33333342;
+    border-radius: 30%;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
 }
