@@ -12,6 +12,8 @@ if (!WAKATIME_API_KEY) {
   process.exit(1);
 }
 
+console.log(`Clé reçue (4 premiers chars) : ${WAKATIME_API_KEY.substring(0, 4)}`);
+
 async function fetchWakaTimeStats() {
   console.log('Appel à l\'API WakaTime...');
   
