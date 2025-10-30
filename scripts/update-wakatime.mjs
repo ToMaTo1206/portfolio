@@ -3,8 +3,9 @@ import { writeFile } from 'fs/promises';
 
 // --- Configuration ---
 const WAKATIME_API_KEY = process.env.WAKATIME_API_KEY;
+// On garde 'last_7_days' pour l'instant
 const API_URL = 'https://wakatime.com/api/v1/users/current/summaries?range=last_7_days';
-const OUTPUT_FILE = 'wakatime.json'; // Fichier de sortie (à la racine)
+const OUTPUT_FILE = 'wakatime.json';
 // ---------------------
 
 if (!WAKATIME_API_KEY) {
@@ -15,9 +16,8 @@ if (!WAKATIME_API_KEY) {
 console.log(`Clé reçue (4 premiers chars) : ${WAKATIME_API_KEY.substring(0, 4)}`);
 
 async function fetchWakaTimeStats() {
-  console.log('Appel à l\'API WakaTime...');
+  console.log('Appel à l\'API WakaTime (/summaries)...');
   
-  // On encode la clé pour l'authentification
   const encodedKey = btoa(WAKATIME_API_KEY);
 
   try {
@@ -33,19 +33,16 @@ async function fetchWakaTimeStats() {
 
     const data = await response.json();
     
-    // V V V V V CORRECTION ICI V V V V V
-    // On prend data.grand_total (le total cumulé)
-    // et non data.data (la liste par jour)
+    // V V V V V LA CORRECTION EST ICI V V V V V
+    // On lit data.grand_total, et non data.data.grand_total
     const totalTime = data.grand_total.text;
-    // ^ ^ ^ ^ ^ CORRECTION ICI ^ ^ ^ ^ ^
+    // ^ ^ ^ ^ ^ LA CORRECTION EST ICI ^ ^ ^ ^ ^
 
     if (totalTime) {
       console.log(`Temps récupéré : ${totalTime}`);
       
-      // On prépare le JSON de sortie
       const outputData = JSON.stringify({ totalTime: totalTime });
       
-      // On écrit le fichier à la racine du projet
       await writeFile(OUTPUT_FILE, outputData);
       
       console.log(`Fichier ${OUTPUT_FILE} mis à jour.`);
