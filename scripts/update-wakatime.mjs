@@ -3,7 +3,7 @@ import { writeFile } from 'fs/promises';
 
 // --- Configuration ---
 const WAKATIME_API_KEY = process.env.WAKATIME_API_KEY;
-// On garde 'last_7_days' pour l'instant
+// On garde l'URL qui fonctionne
 const API_URL = 'https://wakatime.com/api/v1/users/current/summaries?range=last_7_days';
 const OUTPUT_FILE = 'wakatime.json';
 // ---------------------
@@ -15,7 +15,7 @@ if (!WAKATIME_API_KEY) {
 
 console.log(`Clé reçue (4 premiers chars) : ${WAKATIME_API_KEY.substring(0, 4)}`);
 
-async function fetchWakaTimeStats() {
+async function debugWakaTimeStats() {
   console.log('Appel à l\'API WakaTime (/summaries)...');
   
   const encodedKey = btoa(WAKATIME_API_KEY);
@@ -32,28 +32,25 @@ async function fetchWakaTimeStats() {
     }
 
     const data = await response.json();
-    
-    // V V V V V LA CORRECTION EST ICI V V V V V
-    // On lit data.grand_total, et non data.data.grand_total
-    const totalTime = data.grand_total.text;
-    // ^ ^ ^ ^ ^ LA CORRECTION EST ICI ^ ^ ^ ^ ^
 
-    if (totalTime) {
-      console.log(`Temps récupéré : ${totalTime}`);
-      
-      const outputData = JSON.stringify({ totalTime: totalTime });
-      
-      await writeFile(OUTPUT_FILE, outputData);
-      
-      console.log(`Fichier ${OUTPUT_FILE} mis à jour.`);
-    } else {
-      console.error('Impossible de trouver le temps total dans la réponse API.');
-    }
+    // V V V V V SECTION DE DÉBOGAGE V V V V V
+    // Affiche le JSON complet de manière lisible
+    console.log('--- DÉBUT DE LA RÉPONSE API ---');
+    console.log(JSON.stringify(data, null, 2));
+    console.log('--- FIN DE LA RÉPONSE API ---');
+    // ^ ^ ^ ^ ^ SECTION DE DÉBOGAGE ^ ^ ^ ^ ^
+    
+    // On écrit un fichier bidon pour que le script se termine avec succès
+    const outputData = JSON.stringify({ debug: "ok" });
+    await writeFile(OUTPUT_FILE, outputData);
+    
+    console.log(`Fichier ${OUTPUT_FILE} de débogage mis à jour.`);
+
 
   } catch (error) {
-    console.error('Erreur lors de la récupération des stats:', error);
+    console.error('Erreur lors du débogage:', error);
     process.exit(1);
   }
 }
 
-fetchWakaTimeStats();
+debugWakaTimeStats();
