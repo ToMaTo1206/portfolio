@@ -1,10 +1,10 @@
+// On importe 'fs' pour écrire des fichiers
 import { writeFile } from 'fs/promises';
 
 // --- Configuration ---
 const WAKATIME_API_KEY = process.env.WAKATIME_API_KEY;
-// NOUVEAU POINT D'API pour tester l'authentification
-const API_URL = 'https://wakatime.com/api/v1/users/current/summaries?range=all_time';
-const OUTPUT_FILE = 'wakatime.json';
+const API_URL = 'https://wakatime.com/api/v1/users/current/summaries?range=last_7_days';
+const OUTPUT_FILE = 'wakatime.json'; // Fichier de sortie (à la racine)
 // ---------------------
 
 if (!WAKATIME_API_KEY) {
@@ -12,12 +12,12 @@ if (!WAKATIME_API_KEY) {
   process.exit(1);
 }
 
-// Ligne de débogage (on la garde)
 console.log(`Clé reçue (4 premiers chars) : ${WAKATIME_API_KEY.substring(0, 4)}`);
 
-async function testAuthentication() {
-  console.log('Appel à l\'API WakaTime (test /users/current)...');
+async function fetchWakaTimeStats() {
+  console.log('Appel à l\'API WakaTime...');
   
+  // On encode la clé pour l'authentification
   const encodedKey = btoa(WAKATIME_API_KEY);
 
   try {
@@ -28,30 +28,30 @@ async function testAuthentication() {
     });
 
     if (!response.ok) {
-      // Si on a encore un BAD REQUEST, la clé est VRAIMENT le problème
-      throw new Error(`Réponse API non OK : ${response.status} ${response.statusText}`);
+      throw new Error(`Réponse API non OK : ${response.statusText}`);
     }
 
     const data = await response.json();
-    
-    // Si ça marche, on affiche votre email (visible dans les logs)
-    if (data.data.email) {
-      console.log(`Authentification RÉUSSIE. Email : ${data.data.email}`);
-      
-      // On ne va pas encore écrire de fichier, on veut juste tester.
-      console.log('Test réussi. Vous pouvez maintenant remettre l_ancien script.');
-      
-      // On va créer un fichier bidon pour que l'étape "commit" fonctionne
-      await writeFile(OUTPUT_FILE, JSON.stringify({ test: "ok" }));
+    const totalTime = data.data.grand_total.text;
 
+    if (totalTime) {
+      console.log(`Temps récupéré : ${totalTime}`);
+      
+      // On prépare le JSON de sortie
+      const outputData = JSON.stringify({ totalTime: totalTime });
+      
+      // On écrit le fichier à la racine du projet
+      await writeFile(OUTPUT_FILE, outputData);
+      
+      console.log(`Fichier ${OUTPUT_FILE} mis à jour.`);
     } else {
-      console.error('Réponse API étrange, "data.email" non trouvé.');
+      console.error('Impossible de trouver le temps total dans la réponse API.');
     }
 
   } catch (error) {
-    console.error('Erreur lors du test d\'authentification:', error);
+    console.error('Erreur lors de la récupération des stats:', error);
     process.exit(1);
   }
 }
 
-testAuthentication();
+fetchWakaTimeStats();
