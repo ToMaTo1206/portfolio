@@ -44,6 +44,7 @@ header{
     flex-grow: 1;
 }
 
+
 .page3{
     display: flex;
     flex-grow: 1;
@@ -88,7 +89,7 @@ header{
     background-color: #0e131f;
 }
 
-a{
+.toolbar a{
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     color: #f0e8d5;
@@ -142,7 +143,7 @@ a{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    border-top: 2px solid #fff;
+    border-top: 2px solid;
 }
 
 .exp div{
@@ -173,22 +174,85 @@ a{
 }
 .projets div{
     display: flex;
-    border: 1px solid;
+    border: 3px solid;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-left: 100px;
-    padding-right: 100px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 15px;
     height: auto;
-    width: 600px;
-    border-radius: 10px;
+    width: 400px;
+    border-radius: 20px;
+    text-align: center;
+    overflow: hidden;
+}
 
+.hidden-left {
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.hidden-right {
+  opacity: 0;
+  transform: translateX(100px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.hidden-middle {
+  opacity: 0;
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.visible {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .screen-port{
     width: 100%; 
     height: auto;
     object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.4s ease;
+}
+
+.projets div a{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    text-decoration: none;
+    color: inherit;
+}
+
+.projets div h2 {
+  position: relative;
+  display: inline-block;
+  padding: 5px;
+}
+
+.projets div h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  background-color: currentColor;
+
+  transition: width 0.4s ease-out; 
+  height: 100%;
+  opacity: 10%;
+}
+
+.projets div:hover h2::after {
+  width: 100%;
+  height: 100%;
+}
+.projets div:hover .screen-port {
+    transform: scale(1.1); /* L'image grossit de 10% */
 }
 
 
@@ -284,4 +348,33 @@ a{
         font-size: smaller;
 }
 
+}
+
+
+
+
+
+
+
+
+
+/* À ajouter à votre CSS */
+
+/* Classes pour cacher les éléments au départ (gauche/droite) */
+.hidden-left {
+  opacity: 0;
+  transform: translateX(-100px); /* Part de la gauche */
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.hidden-right {
+  opacity: 0;
+  transform: translateX(100px); /* Part de la droite */
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Classe pour révéler les éléments (commune aux deux) */
+.visible {
+  opacity: 1;
+  transform: translateX(0); /* Retour à la position d'origine (centre) */
 }

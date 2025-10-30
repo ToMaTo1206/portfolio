@@ -1,7 +1,9 @@
 const btn = document.getElementById("btn-mode");
 const p_mode = document.getElementById("p-mode");
-const mark = document.getElementById("mark")
-console.log(mark)
+const mark = document.getElementById("mark");
+const proj1 = document.getElementById("proj1");
+const proj2 = document.getElementById("proj2");
+const proj3 = document.getElementById("proj3");
 
 function textContent(){
     if (document.body.classList.contains("jour")) {
@@ -22,5 +24,43 @@ function textContent(){
 
 btn.addEventListener("click", () => {
     textContent();
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    const elementsToAnimate = document.querySelectorAll(".hidden-left, .hidden-right, .hidden-middle");
+    const observer = new IntersectionObserver((entries) => {
+        
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.1
+    });
+
+    elementsToAnimate.forEach(element => {
+        observer.observe(element);
+    });
 
 });
