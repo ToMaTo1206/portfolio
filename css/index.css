@@ -347,6 +347,18 @@ header{
   height: 100%;
 }
 
+footer{
+    width: 100%;
+    height: 100px;
+    border-top: 2px solid;
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    opacity: 50%;
+    align-items: center;
+}
+
 
 
 @media screen and (max-width: 1024px) {
@@ -448,30 +460,19 @@ header{
 }
 
 
-
-
-
-
-
-
-
-/* À ajouter à votre CSS */
-
-/* Classes pour cacher les éléments au départ (gauche/droite) */
 .hidden-left {
   opacity: 0;
-  transform: translateX(-100px); /* Part de la gauche */
+  transform: translateX(-100px);
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
 .hidden-right {
   opacity: 0;
-  transform: translateX(100px); /* Part de la droite */
+  transform: translateX(100px);
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
-/* Classe pour révéler les éléments (commune aux deux) */
 .visible {
   opacity: 1;
-  transform: translateX(0); /* Retour à la position d'origine (centre) */
+  transform: translateX(0);
 }
