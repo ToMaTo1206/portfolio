@@ -32,7 +32,12 @@ async function fetchWakaTimeStats() {
     }
 
     const data = await response.json();
-    const totalTime = data.data.grand_total.text;
+    
+    // V V V V V CORRECTION ICI V V V V V
+    // On prend data.grand_total (le total cumulé)
+    // et non data.data (la liste par jour)
+    const totalTime = data.grand_total.text;
+    // ^ ^ ^ ^ ^ CORRECTION ICI ^ ^ ^ ^ ^
 
     if (totalTime) {
       console.log(`Temps récupéré : ${totalTime}`);
