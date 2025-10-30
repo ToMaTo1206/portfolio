@@ -1,7 +1,14 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body{
     margin: 0;
     transition: background-color 0.5s ease, color 0.5s ease;
     font-family: 'Nunito Sans', sans-serif;
+    overflow-x: hidden;
 }
 html {
   scroll-padding-top: 100px;
@@ -15,10 +22,10 @@ header{
     position: fixed;
     width: 100%;
     background-color: rgba(15, 23, 42, 0.80);
-    backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
     z-index: 100;
-
+    box-sizing: border-box;
 }
 .toolbar{
     display: flex;
@@ -34,21 +41,31 @@ header{
 .page{
     display: flex;
     flex-direction: column;
-    height: 200vb;
     width: 100%;
+    overflow-x: hidden;
 }
 
 .page1{
     display: flex;
     justify-content: center;
     flex-grow: 1;
+    margin-top: 100px;
 }
 
+.page2{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 20px;
+    align-items: center;
+}
 
 .page3{
     display: flex;
+    flex-direction: column;
     flex-grow: 1;
-
+    padding: 20px;
+    align-items: center;
 }
 
 .welcome{
@@ -131,13 +148,7 @@ header{
     margin-left: 20px;
 }
 
-.page2{
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    padding: 20px;
-    align-items: center;
-}
+
 
 .exp{
     display: flex;
@@ -256,9 +267,56 @@ header{
 }
 
 
+/*Outils*/
+.tools-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)) ;
+    gap: 10px;
+    width: 80%;
+    max-width: 900px;
+    margin: 40px 0;
+}
+
+.tool-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    border: 1px solid #ffffff20;
+    border-radius: 10px;
+    background-color: #ffffff05;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.tool-card:hover {
+    transform: translateY(-5px);
+    background-color: #ffffff10;
+}
+
+.tool-card img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.tool-card h3 {
+    margin: 10px 0 0 0;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: inherit;
+}
+
+
+
+
 
 @media screen and (max-width: 1024px) {
 
+    .page1{
+        margin-top: 0;
+}
+    
     .welcome {
         flex-direction: column;
         text-align: center;
@@ -307,14 +365,15 @@ header{
 
 @media screen and (max-width: 768px) {
 
-    header {
-        padding: 15px;
+    header{
+        width: screen;
     }
     
     .toolbar {
+        padding: 0;
+        gap: 10px; 
         flex-wrap: wrap;
         justify-content: center;
-        gap: 15px; 
     }
 
     .pdp {
@@ -336,10 +395,10 @@ header{
         padding: 20px;
     }
 
-    a{
+    .toolbar a {
         height: 25px;
         width: 70px;
-        font-size: smaller;
+        font-size: xx-small;
     }
     .mode{
         width: 50px;
