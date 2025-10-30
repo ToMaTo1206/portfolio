@@ -68,29 +68,3 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-
-
-
-
-
-window.addEventListener('load', getTotalTime);
-
-async function getTotalTime() {
-  const el = document.getElementById('waka-total');
-
-  try {
-    // 1. On appelle le FICHIER JSON local
-    const response = await fetch('wakatime.json'); 
-    const data = await response.json();
-
-    if (data.totalTime) {
-      // 2. On met à jour le texte
-      el.textContent = data.totalTime;
-    } else {
-      el.textContent = 'Erreur';
-    }
-  } catch (error) {
-    console.error('Erreur:', error);
-    el.textContent = 'Erreur';
-  }
-}
