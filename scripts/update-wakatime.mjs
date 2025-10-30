@@ -3,7 +3,7 @@ import { writeFile } from 'fs/promises';
 // --- Configuration ---
 const WAKATIME_API_KEY = process.env.WAKATIME_API_KEY;
 // NOUVEAU POINT D'API pour tester l'authentification
-const API_URL = 'https://wakatime.com/api/v1/users/current';
+const API_URL = 'https://wakatime.com/api/v1/users/current/summaries?range=all_time';
 const OUTPUT_FILE = 'wakatime.json';
 // ---------------------
 
