@@ -174,6 +174,47 @@ button img:active{
     margin-left: 20px;
 }
 
+.presentation-sup{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.presentation-sup a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0e8d5;
+    border-radius: 10px;
+    width: 80px;
+    height: 25px;
+    object-fit: contain;
+    text-decoration: none;
+    color: #0e131f;
+    font-weight: lighter;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    border: 2px solid #ff000028;
+    font-size: small;
+}
+.presentation-sup a img{
+    object-fit: contain;
+    width: 20px;
+}
+
+.presentation-sup p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.presentation-sup p img{
+    object-fit: contain;
+    width: 20px;
+    filter: invert(0.5);
+}
+
 .exp{
     display: flex;
     flex-direction: row;
