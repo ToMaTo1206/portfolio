@@ -121,18 +121,34 @@ header{
 }
 
 .mode{
-    background: none;
-    border: 1px solid #f0e8d5;
-    border-radius: 10px;
-    width: 70px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    width: 45px;
     height: 35px;
-    color: #f0e8d5;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     justify-content: center;
     align-items: center;
     display: flex;
 }
+
+button img{
+    filter: invert(1);
+    object-fit: contain;
+    width: 35px;
+    transition: 1s ease;
+}
+
+button img:hover{
+    transform: rotate(45deg);
+}
+button img:active{
+    transform: scale(0.8);
+}
+
+
 .presentation{
     font-weight: 700;
     font-size: large;
@@ -252,7 +268,6 @@ header{
   left: 0;
   width: 0;
   background-color: currentColor;
-
   transition: width 0.4s ease-out; 
   height: 100%;
   opacity: 10%;
@@ -263,7 +278,7 @@ header{
   height: 100%;
 }
 .projets div:hover .screen-port {
-    transform: scale(1.1); /* L'image grossit de 10% */
+    transform: scale(1.1);
 }
 
 

@@ -1,19 +1,18 @@
 const btn = document.getElementById("btn-mode");
-const p_mode = document.getElementById("p-mode");
 const mark = document.getElementById("mark");
-const proj1 = document.getElementById("proj1");
-const proj2 = document.getElementById("proj2");
-const proj3 = document.getElementById("proj3");
+const iconMode = document.getElementById('icon-mode');
 
 function textContent(){
     if (document.body.classList.contains("jour")) {
-        p_mode.textContent = "Nuit";
+        iconMode.alt = "Passer au mode nuit";
+        iconMode.src = "img/sun.svg";
         document.body.classList.remove("jour");
         document.body.classList.toggle("nuit");
         mark.classList.remove("surligne-jour");
         mark.classList.toggle("surligne-nuit");
     } else if (document.body.classList.contains("nuit")) {
-        p_mode.textContent = "Jour";
+        iconMode.alt = "Passer au mode jour";
+        iconMode.src = "img/moon.svg";
         document.body.classList.remove("nuit");
         document.body.classList.toggle("jour");
         mark.classList.remove("surligne-nuit");
@@ -26,23 +25,7 @@ btn.addEventListener("click", () => {
     textContent();
 });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* Effet pour les projets */
 
 document.addEventListener("DOMContentLoaded", function() {
     const elementsToAnimate = document.querySelectorAll(".hidden-left, .hidden-right, .hidden-middle");
