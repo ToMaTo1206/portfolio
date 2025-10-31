@@ -198,8 +198,6 @@ button img:active{
     font-family: 'Montserrat', sans-serif;
     font-style: italic;
     font-weight: 700;
-    border: 2px solid #33333342;
-    border-radius: 30%;
     padding: 10px;
     justify-content: center;
     align-items: center;
