@@ -38,6 +38,16 @@ header{
 }
 
 
+.link-icon {
+    display: none;
+    width: 35px;
+    height: 35px;
+}
+
+.link-text {
+    display: inline;
+}
+
 .page{
     display: flex;
     flex-direction: column;
@@ -118,21 +128,39 @@ header{
     text-decoration: none;
     border: 1px solid #f0e8d5;
     border-radius: 10px;
+    transition: 0.8s ease;
+}
+
+.toolbar a:active{
+    transform: scale(0.9);
 }
 
 .mode{
-    background: none;
-    border: 1px solid #f0e8d5;
-    border-radius: 10px;
-    width: 70px;
-    height: 35px;
-    color: #f0e8d5;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
     justify-content: center;
     align-items: center;
     display: flex;
+    width: 35px;
 }
+
+button img{
+    filter: invert(1);
+    object-fit: contain;
+    width: 35px;
+    transition: 1s ease;
+}
+
+button img:hover{
+    transform: rotate(45deg);
+}
+button img:active{
+    transform: scale(0.8) rotate(45deg);
+}
+
+
 .presentation{
     font-weight: 700;
     font-size: large;
@@ -252,7 +280,6 @@ header{
   left: 0;
   width: 0;
   background-color: currentColor;
-
   transition: width 0.4s ease-out; 
   height: 100%;
   opacity: 10%;
@@ -263,7 +290,7 @@ header{
   height: 100%;
 }
 .projets div:hover .screen-port {
-    transform: scale(1.1); /* L'image grossit de 10% */
+    transform: scale(1.1);
 }
 
 
@@ -421,7 +448,7 @@ footer{
     
     .toolbar {
         padding: 0;
-        gap: 10px; 
+        gap: 20px; 
         flex-wrap: wrap;
         justify-content: center;
     }
@@ -447,15 +474,36 @@ footer{
 
     .toolbar a {
         height: 25px;
-        width: 70px;
+        width: 35px;
         font-size: xx-small;
+        border: none;   
     }
-    .mode{
-        width: 50px;
+    #btn-mode {
+        width: 35px;
         height: 25px;
-        font-weight: 700;
         font-size: smaller;
-}
+        background-color: transparent;
+        border-radius: 10px;
+        padding: 0;
+    }
+    .link-text {
+        display: none;
+    }
+
+    .link-icon{
+        display: block;
+        filter: invert(1);
+    }
+
+    .toolbar a:hover{
+        transform: rotate(5deg);
+    }
+
+    .toolbar a:active{
+        transform: scale(0.9) rotate(5deg);
+    }
+    
+
 
 }
 

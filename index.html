@@ -9,30 +9,43 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body class="nuit">
+
     <header>
         <div class="toolbar">
-            <a href="#Accueil">Accueil</a>
-            <a href="#Parcours">Parcours</a>
-            <a href="#Projets">Projets</a>
-            <button  id="btn-mode" class="mode"><p id="p-mode">Nuit</p></button>
+            <a href="#Parcours">
+                <span class="link-text">Parcours</span>
+                <img src="img/link-icons/parcours.svg" alt="Parcours" class="link-icon">
+            </a>
+            <a href="#Projets">
+                <span class="link-text">Projets</span>
+                <img src="img/link-icons/projet.svg" alt="Projets" class="link-icon">
+            </a>
+            <a href="#Outils">
+                <span class="link-text">Outils</span>
+                <img src="img/link-icons/outils.svg" alt="Outils" class="link-icon">
+            </a>
+            <a href="#Contact">
+                <span class="link-text">Contact</span>
+                <img src="img/link-icons/contact.svg" alt="Contact" class="link-icon">
+            </a>
+            <button  id="btn-mode" class="mode">
+                <img id="icon-mode" src="img/sun.svg" alt="Passer au mode jour">
+            </button>
         </div>
     </header>
 
     <section class="page">
-            <section id="Accueil" class="page1">
+            <section class="page1">
                 <div class="welcome">
                     <div class="presentation">
                             <h1>Bonjour, je suis <mark id="mark" class="surligne-nuit">Thomas Denoyelle</mark> !</h1>
                             <p>J'ai 19 ans et je suis passioné par le développement web. Je poursui actuellement un BUT Informatique à l'IUT de Reims.</p><br>
                             <p>En dehors de l'informatique, je passe une partie de mon temps à faire du sport comme de la course à pied, du ping pong, de la randonnée et plein d'autres choses encore ...</p>
-                        
                     </div>
                     <img src="img/A6404339 2-modified.png" alt="Photo de profil" class="pdp">
                 </div>
                 
             </section>
-
-
 
             <section class="page2">
                 <h1 id="Parcours">Parcours et Expériences</h1>
@@ -78,7 +91,7 @@
             </section>
             
             <section class="page3">
-                <h1 id="Outils">Mes Outils</h1>
+                <h1 id="Outils" id="Outils">Mes Outils</h1>
                 <div class="tools-grid">
                     
                     <div class="tool-card">
@@ -129,10 +142,8 @@
                         <img src="img/icons8-code-studio-visuel-2019-48.png" alt="VS Code">
                         <h3>VS Code</h3>
                     </div>
-
                 </div>
-
-                <div class="contact">
+                <div class="contact" id="Contact">
                     <h2>Vous souhaitez me contacter ?</h2>
                     <p>Vous pouvez le faire via mon <a href="https://www.linkedin.com/in/thomas-denoyelle-2198a42b9/">linkedin</a> ou par mon <a href="mailto:thom84.1206@gmail.com"> mail</a> !</p>
                 </div>
@@ -143,6 +154,7 @@
         <p>© 2025 Thomas Denoyelle. Tous droits réservés.</p>
         <p>Site fait avec amour en Html, Css et JavaScript !</p>
     </footer>
+    
     <script src="js/index.js"></script>
 </body>
 </html>
