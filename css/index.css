@@ -423,7 +423,64 @@ button img:active{
 form{
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 80%;
+    max-width: 700px;
+    margin: 40px auto;
 }
+
+form label{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+    width: 100%;
+    padding: 12px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1rem;
+    color: inherit;
+    background-color: #ffffff0f;
+    border: 1px solid;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+form div{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form textarea:focus {
+    border-color: inherit;
+    box-shadow: 0 0 5px #f0e8d5a0;
+}
+
+form button[type="submit"] {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    color: inherit;
+    background-color: transparent;
+    border: 1px solid;
+    border-radius: 10px;
+    padding: 12px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
 
 footer{
     width: 100%;
@@ -554,7 +611,16 @@ footer{
         transform: scale(0.9) rotate(5deg);
     }
     
+    form div{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+}
 
+    .contact h2 {
+        font-size: large;
+        
+}
 
 }
 
