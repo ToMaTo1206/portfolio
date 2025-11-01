@@ -15,6 +15,15 @@ html {
   scroll-behavior: smooth;  
 }
 
+#favA{
+    border: none;
+}
+
+#fav{
+    width: 70px;
+    background-color: none;
+}
+
 header{
     display: flex;
     flex-direction: row;
@@ -620,6 +629,10 @@ footer{
     .contact h2 {
         font-size: large;
         
+}
+#fav{
+    width: 50px;
+    background-color: none;
 }
 
 }
