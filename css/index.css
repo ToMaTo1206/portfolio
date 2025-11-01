@@ -134,9 +134,29 @@ header{
     align-items: center;
     display: flex;
     text-decoration: none;
-    border: 1px solid #f0e8d5;
-    border-radius: 10px;
     transition: 0.8s ease;
+}
+
+.linkhover{
+    display: inline-block;
+    position: relative;
+    font-size: larger;
+}
+
+.linkhover::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #f0e8d5;
+  transition: transform 0.25s ease-out;
+}
+
+.linkhover:hover::after {
+  transform: scaleX(1);
 }
 
 .toolbar a:active{
@@ -635,6 +655,10 @@ footer{
     background-color: none;
 }
 
+.linkhover::after {
+  width: 0;
+}
+
 }
 
 .hidden-left {
@@ -652,25 +676,4 @@ footer{
 .visible {
   opacity: 1;
   transform: translateX(0);
-}
-
-
-
-.moi{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-}
-
-.stats{
-    margin-top: 40px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: 2px solid;
-    border-radius: 20px;
-    background-color: #ffffff05;
-    padding: 10px;
 }
