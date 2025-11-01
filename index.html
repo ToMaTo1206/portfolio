@@ -149,7 +149,20 @@
                 </div>
                 <div class="contact" id="Contact">
                     <h2>Vous souhaitez me contacter ?</h2>
-                    <p>Vous pouvez le faire via mon <a href="https://www.linkedin.com/in/thomas-denoyelle-2198a42b9/">linkedin</a> ou par mon <a href="mailto:thom84.1206@gmail.com"> mail</a> !</p>
+                    
+                    <form action="https://formsubmit.co/thom84.1206@gmail.com" method="post">
+                        <div>
+                            <label>Votre Nom : <input type="text" name="name" id="name"></label>
+                        <label>Votre Prénom : <input type="text" name="forname" id="forname"></label>
+                        </div>
+                        <label>Votre Message : 
+                            <textarea name="Message" id="Message" rows="6"></textarea>
+                        </label>
+
+                        <input type="hidden" name="_next" value="https://thomasdenoyelle.dev">
+                        <button type="submit">Envoyer</button>
+                    </form>
+                    <p>Vous pouvez aussi le faire via mon <a href="https://www.linkedin.com/in/thomas-denoyelle-2198a42b9/">linkedin</a> !</p>
                 </div>
             </section>
     </section>
