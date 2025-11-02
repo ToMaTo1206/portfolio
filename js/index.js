@@ -49,82 +49,79 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
-document.addEventListener('DOMContentLoaded', () => {
-  
-  const API_URL = 'http://192.168.1.111:3001/api/strava';
-
-  fetch(API_URL)
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('La réponse du backend est mauvaise');
-      }
-      return response.json();
-    })
-    .then(stats => {
-      const totalRunDistance = stats.all_run_totals.distance / 1000;
-      
-      const totalRideDistance = stats.all_ride_totals.distance / 1000;
-
-      const runElement = document.getElementById('strava-run-km');
-      if (runElement) {
-        runElement.textContent = Math.round(totalRunDistance);
-      }
-      const rideElement = document.getElementById('strava-ride-km');
-      if (rideElement) {
-        rideElement.textContent = Math.round(totalRideDistance);
-      }
-    })
-    .catch(error => {
-      console.error("Impossible de charger les stats Strava:", error);
-      const stravaSection = document.getElementById('strava-section');
-      if (stravaSection) {
-        stravaSection.style.display = 'none';
-      }
-    });
-});
-
-
 
 document.addEventListener('DOMContentLoaded', () => {
   
   const API_URL = 'https://api.thomasdenoyelle.dev/api/strava';
+  const totalKmEl = document.getElementById('strava-total-km');
+  const totalTimeEl = document.getElementById('strava-total-time');
   
-  // --- TES CIBLES ---
-  // (Tu as déjà cette ligne)
-  const runKmElement = document.getElementById('strava-run-km');
-  // (AJOUTE CELLE-CI)
-  const runTimeElement = document.getElementById('strava-run-time'); 
+  const runKmEl = document.getElementById('strava-run-km');
+  const runTimeEl = document.getElementById('strava-run-time');
+  
+  const rideKmEl = document.getElementById('strava-ride-km');
+  const rideTimeEl = document.getElementById('strava-ride-time');
+  const rideElevationEl = document.getElementById('strava-ride-elevation');
 
-  // (On modifie un peu la condition pour tout vérifier)
-  if (runKmElement || runTimeElement) {
-    
-    fetch(API_URL)
-      .then(response => response.json())
-      .then(stats => {
-        
-        // --- Kilomètres (ton code existant) ---
-        if (runKmElement) {
-          const totalRunDistance = stats.all_run_totals.distance;
-          runKmElement.textContent = Math.round(totalRunDistance / 1000);
-        }
 
-        // --- HEURES (LA NOUVELLE PARTIE) ---
-        if (runTimeElement) {
-          // 1. Récupère le temps en SECONDES
-          const totalSeconds = stats.all_run_totals.moving_time;
-          
-          // 2. Convertit les secondes en heures (Secondes / 3600)
-          const totalHours = Math.round(totalSeconds / 3600);
-          
-          // 3. Affiche-le !
-          runTimeElement.textContent = totalHours;
+  fetch(API_URL)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`Erreur HTTP: ${response.status}`);
+      }
+      return response.json();
+    })
+    .then(stats => {
+
+      const runDistance = stats.all_run_totals.distance;
+      const runTime = stats.all_run_totals.moving_time;
+      
+      const rideDistance = stats.all_ride_totals.distance;
+      const rideTime = stats.all_ride_totals.moving_time;
+      const rideElevation = stats.all_ride_totals.elevation_gain;
+      
+      const swimDistance = stats.all_swim_totals.distance;
+      const swimTime = stats.all_swim_totals.moving_time;
+
+      // Course à pied
+      if (runKmEl) {
+        runKmEl.textContent = Math.round(runDistance / 1000);
+      }
+      if (runTimeEl) {
+        runTimeEl.textContent = Math.round(runTime / 3600);
+      }
+
+      // Vélo
+      if (rideKmEl) {
+        rideKmEl.textContent = Math.round(rideDistance / 1000);
+      }
+      if (rideTimeEl) {
+        rideTimeEl.textContent = Math.round(rideTime / 3600);
+      }
+      if (rideElevationEl) {
+        rideElevationEl.textContent = Math.round(rideElevation);
+      }
+
+      // Totaux (tous sports)
+      if (totalKmEl) {
+        const totalKm = (runDistance + rideDistance + swimDistance) / 1000;
+        totalKmEl.textContent = Math.round(totalKm);
+      }
+      if (totalTimeEl) {
+        const totalTime = (runTime + rideTime + swimTime) / 3600;
+        totalTimeEl.textContent = Math.round(totalTime);
+      }
+    })
+    .catch(error => {
+
+      console.error("Erreur lors du chargement des stats Strava:", error);
+      
+      const allElements = [totalKmEl, totalTimeEl, runKmEl, runTimeEl, rideKmEl, rideTimeEl,rideElevationEl];
+      
+      allElements.forEach(element => {
+        if (element) {
+          element.textContent = "N/A";
         }
-      })
-      .catch(error => {
-        console.error("Erreur chargement Strava:", error);
-        // On met "N/A" partout en cas d'erreur
-        if (runKmElement) runKmElement.textContent = "N/A";
-        if (runTimeElement) runTimeElement.textContent = "N/A"; // <-- AJOUTE ÇA
       });
-  }
+    });
 });

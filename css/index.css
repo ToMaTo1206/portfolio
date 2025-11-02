@@ -677,3 +677,20 @@ footer{
   opacity: 1;
   transform: translateX(0);
 }
+
+#sport{
+    filter: invert(0.5);
+    width: 25px;
+}
+
+.strava{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    gap: 30px;
+}
+
+.strava span img{
+    filter: invert(0.5);
+    width: 25px;
+}
