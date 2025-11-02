@@ -208,6 +208,7 @@ button img:active{
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    margin-top: 10px;
 }
 .presentation-sup a{
     display: flex;
@@ -678,19 +679,48 @@ footer{
   transform: translateX(0);
 }
 
-#sport{
-    filter: invert(0.5);
-    width: 25px;
-}
-
 .strava{
     justify-content: center;
     align-items: center;
     display: flex;
-    gap: 30px;
+    gap: 50px;
 }
 
 .strava span img{
     filter: invert(0.5);
-    width: 25px;
+    width: 30px;
+}
+
+.run-container{
+    position: relative;
+    cursor: help;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.run-container .run-text {
+  visibility: hidden;
+  opacity: 0;
+  background-color: #ffffff0f;
+  color: #f0e8d5;
+  padding: 10px 15px;
+  border-radius: 6px;
+  font-size: small;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  display: flex;
+  z-index: 1;
+  top: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150px;
+  height: 20px;
+  transition: opacity 0.2s ease-in-out;
+}
+.run-container:hover .run-text {
+  visibility: visible;
+  opacity: 1;
 }
