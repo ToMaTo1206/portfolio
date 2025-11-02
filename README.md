@@ -6,19 +6,14 @@ Ce site a été entièrement codé à la main en **HTML**, **CSS** et **JavaScri
 
 **[Visitez le site en ligne ➔](https://thomasdenoyelle.dev)**
 
----
 
-## 📸 Aperçu
-
-![Aperçu du portfolio](img/CaptureSite.png)
-
----
 
 
 ## 🛠️ Prochaines fonctionnalités 
 
 * **Utilisation API Strava**
-    * Montrer mes stats sportives dans la rubrique présentation
+    * Montrer mes stats sportives dans la rubrique présentation ✅
+
 
 
 ---
