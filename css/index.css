@@ -600,6 +600,10 @@ footer{
         font-size: medium;
     }
 
+    .presentation-sup{
+        gap: 30px;
+    }
+
     .exp div {
         width: 90%;
         padding: 20px 0;
@@ -658,6 +662,18 @@ footer{
 
 .linkhover::after {
   width: 0;
+}
+
+.strava{
+    font-size: small;
+}
+
+}
+
+@media screen and (max-width: 360px) {
+
+.strava{
+    font-size: xx-small;
 }
 
 }
