@@ -43,7 +43,7 @@ header{
     font-family: 'Montserrat', sans-serif;
     justify-content: center;
     align-items: center;
-    gap: 4%;
+    gap: 40px;
 }
 
 .link-icon {
@@ -128,8 +128,6 @@ header{
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     color: #f0e8d5;
-    height: 35px;
-    width: 80px;
     justify-content: center;
     align-items: center;
     display: flex;
@@ -365,7 +363,7 @@ button img:active{
 }
 
 /*Outils*/
-#Outils{
+#Competences{
     margin-top: 60px;
 }
 
@@ -470,7 +468,6 @@ form label{
 }
 
 form input[type="text"],
-form input[type="email"],
 form textarea {
     width: 100%;
     padding: 12px;
@@ -491,7 +488,6 @@ form div{
 }
 
 form input[type="text"]:focus,
-form input[type="email"]:focus,
 form textarea:focus {
     border-color: inherit;
     box-shadow: 0 0 5px #f0e8d5a0;
@@ -523,6 +519,7 @@ footer{
     opacity: 50%;
     align-items: center;
 }
+
 
 
 
