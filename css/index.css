@@ -465,7 +465,17 @@ form label{
     gap: 10px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
+    
 }
+
+.lab-message{
+    margin: 10px;
+}
+
+.lab-message textarea{
+    resize: none;
+}
+
 
 form input[type="text"],
 form textarea {
