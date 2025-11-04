@@ -465,11 +465,12 @@ form label{
     gap: 10px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
-    
+    text-align: center;
 }
 
 .lab-message{
     margin: 10px;
+    text-align: center;
 }
 
 .lab-message textarea{
