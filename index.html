@@ -9,193 +9,37 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
 </head>
-<body class="nuit">
+<body class="bg-night">
 
-    <header>
-        <div class="toolbar">
-            <a href="#head" id="favA">
-                <img src="img/favicon/_td_day.svg" alt="cc" id="fav">
+    <header class="dark:bg-night text-day p-3">
+        <div class="flex justify-center items-center gap-5">
+            <a href="#head" id="favA" class="text-day">
+                <img src="img/favicon/_td_day.svg" alt="cc" id="fav" class="h-5">
             </a>
             
             <a href="#Parcours" class="linkhover">
-                <span class="link-text">Parcours</span>
-                <img src="img/link-icons/parcours.svg" alt="Parcours" class="link-icon">
+                <span class="">Parcours</span>
+                <img src="img/link-icons/parcours.svg" alt="Parcours" class="invert sm:hidden">
             </a>
             <a href="#Realisations" class="linkhover">
                 <span class="link-text">Réalisations</span>
-                <img src="img/link-icons/projet.svg" alt="Projets" class="link-icon">
+                <img src="img/link-icons/projet.svg" alt="Projets" class="invert sm:hidden">
             </a>
             <a href="#Competences" class="linkhover">
                 <span class="link-text">Compétences</span>
-                <img src="img/link-icons/outils.svg" alt="Outils" class="link-icon">
+                <img src="img/link-icons/outils.svg" alt="Outils" class="invert sm:hidden">
             </a>
             <a href="#Contact" class="linkhover">
                 <span class="link-text">Contact</span>
-                <img src="img/link-icons/contact.svg" alt="Contact" class="link-icon">
+                <img src="img/link-icons/contact.svg" alt="Contact" class="invert sm:hidden">
             </a>
             <button  id="btn-mode" class="mode">
-                <img id="icon-mode" src="img/sun.svg" alt="Passer au mode jour">
+                <img id="icon-mode" src="img/sun.svg" alt="Passer au mode jour" class="invert sm:hidden">
             </button>
         </div>
     </header>
 
-    <section class="page">
-            <section class="page1" id="head">
-                <div class="welcome">
-                    <div class="presentation">
-                            <h1>Bonjour, je suis <mark id="mark" class="surligne-nuit">Thomas Denoyelle</mark> !</h1>
-                            <p>J'ai 19 ans et je suis passioné par le développement web. Je poursuis actuellement un BUT Informatique à l'IUT de Reims.</p><br>
-                            <p>En dehors de l'informatique, je passe une partie de mon temps à faire du sport comme de la course à pied, du vélo et plein d'autres choses encore ...    <br>
-                            <div class="strava">
-                                <span class="run-container">
-                                    <img src="img/link-icons/run.svg" alt="course à pied">
-                                    <strong id="strava-run-km">...</strong> km | <strong id="strava-run-time">...</strong> h
-                                    <span class="run-text">Depuis février 2025</span>
-                                </span>
-                                <span class="run-container">
-                                    <img src="img/link-icons/bike.svg" alt="vélo">
-                                    <strong id="strava-ride-km">...</strong> km | <strong id="strava-ride-time">...</strong> h
-                                    <span class="run-text">Depuis 2023</span>
-                                </span>
-                            </div>
-                                
-                            <div class="presentation-sup">
-                                <a href="https://github.com/ToMaTo1206"><img src="img/GitHub.svg" alt="">GitHub</a>
-                                <p><img src="img/Location.svg" alt=""> Soissons</p>
-                            </div>
-                    </div>
-                    <img src="img/A6404339 2-modified.png" alt="Photo de profil" class="pdp">
-                </div>
-                
-            </section>
-
-            <section class="page2">
-                <h1 id="Parcours">Parcours</h1>
-                <div class="exp">
-                    <div class="exp1">
-                        <p class="date-exp">2021 - 2024</p>
-                        <p>Baccalauréat Général</p>
-                        <p>Lycée Léonard de Vinci - Soissons</p>
-                    </div>
-                    <div class="exp2">
-                        <p class="date-exp">Juillet 2025 - Août 2025</p>
-                        <p>Agent Pépiniériste</p>
-                        <p>Dalival - Villers-Cotterêts</p>
-                    </div>
-                    <div class="exp3">
-                        <p class="date-exp">2024 - ...</p>
-                        <p>BUT Informatique</p>
-                        <p>IUT de Reims-Châlons-Charleville  - Reims</p>
-                    </div>
-                </div>
-                <h1 id="Realisations">Réalisations</h1>
-                <div class="projets">
-                    
-                    <div class="proj1 hidden-left" id="proj1">
-                        <h2>thomasdenoyelle.dev - Portfolio</h2>
-                        <img src="img/CapturePortfolio.png" alt="" class="screen-port">
-                        <p>Site portfolio présentant mon parcours, mes réalisations, mes outils et mes contacts.</p>
-                        <a href="https://github.com/ToMaTo1206/portfolio">Voir sur github ?</a>
-                    </div>
-                    <div class="proj2 hidden-middle" id="proj2">
-                        <h2>SymplyNote</h2>
-                        <img src="img/symplynoteCut.jpg" alt="" class="screen-port">
-                        <p>Site de création de note.</p>
-                        <a href="https://github.com/ToMaTo1206/SymplyNote">Voir sur github ?</a>
-                    </div>
-                     <div class="proj3 hidden-right" id="proj3">
-                        <h2>Steam Game CRUD</h2>
-                        <img src="img/crud.png" alt="" class="screen-port">
-                        <p>Site PHP CRUD sur l'utilisation d'une base de donnée de jeux vidéos réalisé en duo pour une SAE de  BUT INFO.</p>
-                        <a href="https://github.com/ToMaTo1206/SymplyNote">Voir sur github ?</a>
-                    </div>
-                </div>
-            </section>
-            
-            <section class="page3">
-                <h1 id="Competences">Compétences</h1>
-                <div class="tools-grid">
-                    
-                    <div class="tool-card">
-                        <img src="img/icons8-html-5-48.png" alt="HTML">
-                        <h3>HTML</h3>
-                    </div>
-                    <div class="tool-card">
-                        <img src="img/icons8-css3-48.png" alt="CSS">
-                        <h3>CSS</h3>
-                    </div>
-                    <div class="tool-card">
-                        <img src="img/icons8-javascript-48.png" alt="JavaScript">
-                        <h3>JavaScript</h3>
-                    </div>
-                    <div class="tool-card">
-                        <img src="img/icons8-bootstrap-48.png" alt="Bootstrap">
-                        <h3>Bootstrap</h3>
-                    </div>
-                    <div class="tool-card">
-                        <img src="img/icons8-python-48.png" alt="Python">
-                        <h3>Python</h3>
-                    </div>
-                    <div class="tool-card">
-                        <img src="img/icons8-c++-48.png" alt="C++">
-                        <h3>C++</h3>
-                    </div>
-                    <div class="tool-card">
-                        <img src="img/Elephpant.png" alt="PHP">
-                        <h3>PHP</h3>
-                    </div>
-                    <div class="tool-card">
-                        <img src="img/symfony_black_03.png" alt="Symfony">
-                        <h3>Symfony</h3>
-                    </div>
-                    <div class="tool-card">
-                        <img src="img/icons8-sql-48.png" alt="SQL">
-                        <h3>SQL</h3>
-                    </div>
-                    <div class="tool-card">
-                        <img src="img/PhpMyAdmin_logo.png" alt="PhpMyAdmin">
-                        <h3>PhpMyAdmin</h3>
-                    </div>
-                    <div class="tool-card">
-                        <img src="img/PhpStorm_Icon.png" alt="PhpStorm">
-                        <h3>PhpStorm</h3>
-                    </div>
-                    <div class="tool-card">
-                        <img src="img/icons8-code-studio-visuel-2019-48.png" alt="VS Code">
-                        <h3>VS Code</h3>
-                    </div>
-                </div>
-                <div class="contact" id="Contact">
-                    <h2>Vous souhaitez me contacter ?</h2>
-                    
-                    <form action="https://formsubmit.co/thom84.1206@gmail.com" method="post">
-                        <div>
-                            <label>Votre Nom : <input type="text" name="name" id="name" required></label>
-                        <label>Votre Prénom : <input type="text" name="forname" id="forname" required></label>
-                        </div>
-                        <label class="lab-message">Votre Message : 
-                            <textarea name="Message" id="Message" rows="6" required></textarea>
-                        </label>
-
-                        <input type="hidden" name="_next" value="https://thomasdenoyelle.dev">
-                        <button type="submit">Envoyer</button>
-                    </form>
-                    <p>Vous pouvez aussi le faire via mon <a href="https://www.linkedin.com/in/thomas-denoyelle-2198a42b9/">linkedin</a> !</p>
-                </div>
-            </section>
-    </section>
-
-    <footer>
-        <div class="footer-g">
-            <p>© 2025 Thomas Denoyelle. Tous droits réservés.</p>
-            <p>Site fait avec amour en Html, Css et JavaScript !</p>
-        </div>
-        <div class="footer-d">
-
-        </div>
-
-
-    </footer>
+    
     
     <script src="js/index.js"></script>
 </body>
