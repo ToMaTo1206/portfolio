@@ -9,32 +9,31 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
 </head>
-<body class="bg-night">
+<body class="dark:bg-night bg-day h-svw overflow-x-hidden">
 
-    <header class="dark:bg-night text-day p-3">
-        <div class="flex justify-center items-center gap-5">
+    <header class="text-day p-3 fixed w-full bg-[#0f172a]/80 backdrop-blur-md font-titre md:text-xl font-bold md:h-18 justify-center items-center">
+        <div class="flex justify-center items-center max-sm:gap-4 h-full w-full sm:gap-8 md:gap-10">
             <a href="#head" id="favA" class="text-day">
-                <img src="img/favicon/_td_day.svg" alt="cc" id="fav" class="h-5">
+                <img src="img/favicon/_td_day.svg" alt="" id="fav" class="h-5">
             </a>
-            
             <a href="#Parcours" class="linkhover">
-                <span class="">Parcours</span>
-                <img src="img/link-icons/parcours.svg" alt="Parcours" class="invert sm:hidden">
+                <span class="max-sm:hidden">Parcours</span>
+                <img src="img/link-icons/parcours.svg" alt="Lien vers Parcours" class="invert sm:hidden">
             </a>
             <a href="#Realisations" class="linkhover">
-                <span class="link-text">Réalisations</span>
-                <img src="img/link-icons/projet.svg" alt="Projets" class="invert sm:hidden">
+                <span class="max-sm:hidden">Réalisations</span>
+                <img src="img/link-icons/projet.svg" alt="Lien vers Projets" class="invert sm:hidden">
             </a>
             <a href="#Competences" class="linkhover">
-                <span class="link-text">Compétences</span>
-                <img src="img/link-icons/outils.svg" alt="Outils" class="invert sm:hidden">
+                <span class="max-sm:hidden">Compétences</span>
+                <img src="img/link-icons/outils.svg" alt="Lien vers Outils" class="invert sm:hidden">
             </a>
             <a href="#Contact" class="linkhover">
-                <span class="link-text">Contact</span>
-                <img src="img/link-icons/contact.svg" alt="Contact" class="invert sm:hidden">
+                <span class="max-sm:hidden">Contact</span>
+                <img src="img/link-icons/contact.svg" alt="Lien vers Contact" class="invert sm:hidden">
             </a>
-            <button  id="btn-mode" class="mode">
-                <img id="icon-mode" src="img/sun.svg" alt="Passer au mode jour" class="invert sm:hidden">
+            <button  id="btn-mode">
+                <img id="icon-mode" src="img/sun.svg" alt="Passer au mode jour" class="invert ">
             </button>
         </div>
     </header>

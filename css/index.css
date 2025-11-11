@@ -3,4 +3,12 @@
 @theme {
   --color-night: #0e131f;
   --color-day: #f0e8d5;
+  --font-titre: "Montserrat", sans-serif; 
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+*{
+    @apply transition-colors duration-500;
+    
 }
