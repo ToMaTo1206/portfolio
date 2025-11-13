@@ -382,7 +382,7 @@ button img:active{
     align-items: center;
     justify-content: center;
     padding: 15px;
-    border: 1px solid #ffffff20;
+    border: 1px solid;
     border-radius: 10px;
     background-color: #ffffff05;
     transition: transform 0.3s ease, background-color 0.3s ease;
@@ -390,7 +390,7 @@ button img:active{
 
 .tool-card:hover {
     transform: translateY(-5px);
-    background-color: #ffffff10;
+    background-color: #ffffff1a;
 }
 
 .tool-card img {
