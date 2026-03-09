@@ -248,6 +248,7 @@ button img:active{
     flex-direction: row;
     justify-content: center;
     border-top: 2px solid;
+    margin-bottom: 40px;
 }
 
 .exp div{
