@@ -522,7 +522,7 @@ form button[type="submit"] {
 
 footer{
     width: 100%;
-    height: 100px;
+    height: 130px;
     border-top: 2px solid;
     margin-top: 80px;
     display: flex;
@@ -532,6 +532,19 @@ footer{
     align-items: center;
 }
 
+.footer-g{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.footer-p{
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+}
 
 
 

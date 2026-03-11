@@ -4,3 +4,6 @@
 
 .hintrc
 .DS_Store
+.vscode/settings.json
+
+.vscode/
