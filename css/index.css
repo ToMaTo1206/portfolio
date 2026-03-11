@@ -50,10 +50,15 @@ header{
     display: none;
     width: 35px;
     height: 35px;
+    filter: invert(93%) sepia(11%) saturate(417%) hue-rotate(3deg) brightness(98%) contrast(92%) !important;
 }
 
 .link-text {
     display: inline;
+}
+
+#icon-mode{
+    filter: invert(93%) sepia(11%) saturate(417%) hue-rotate(3deg) brightness(98%) contrast(92%) !important;
 }
 
 .page{
