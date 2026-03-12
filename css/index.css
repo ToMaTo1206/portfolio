@@ -217,19 +217,35 @@ button img:active{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #f0e8d5;
     border-radius: 10px;
     width: 80px;
     height: 25px;
     object-fit: contain;
     text-decoration: none;
-    color: #0e131f;
     font-weight: lighter;
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     border: 2px solid #ff000028;
     font-size: small;
 }
+
+.g-nuit{
+    background-color: #f0e8d5;
+    color: #0e131f;
+}
+
+.g-jour{
+    background-color: #0e131f;
+    color: #f0e8d5;
+}
+
+.g-jour-img{
+    filter: invert(93%) sepia(11%) saturate(417%) hue-rotate(3deg) brightness(98%) contrast(92%) !important;
+}
+.g-nuit-img{
+    filter: invert(6%) sepia(19%) saturate(1481%) hue-rotate(188deg) brightness(91%) contrast(97%) !important;
+}
+
 .presentation-sup a img{
     object-fit: contain;
     width: 20px;

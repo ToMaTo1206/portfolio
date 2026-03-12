@@ -1,6 +1,8 @@
 const btn = document.getElementById("btn-mode");
 const mark = document.getElementById("mark");
 const iconMode = document.getElementById('icon-mode');
+const githubButton = document.getElementById("github");
+const githubImg = document.getElementById("githubImg");
 
 function textContent(){
     if (document.body.classList.contains("jour")) {
@@ -10,6 +12,11 @@ function textContent(){
         document.body.classList.toggle("nuit");
         mark.classList.remove("surligne-jour");
         mark.classList.toggle("surligne-nuit");
+        githubButton.classList.remove("g-jour");
+        githubButton.classList.toggle("g-nuit");
+        githubImg.classList.remove("g-nuit-img")
+        githubImg.classList.toggle("g-jour-img")
+
     } else if (document.body.classList.contains("nuit")) {
         iconMode.alt = "Passer au mode jour";
         iconMode.src = "img/moon.svg";
@@ -17,6 +24,10 @@ function textContent(){
         document.body.classList.toggle("jour");
         mark.classList.remove("surligne-nuit");
         mark.classList.toggle("surligne-jour");
+        githubButton.classList.remove("g-nuit");
+        githubButton.classList.toggle("g-jour");
+        githubImg.classList.remove("g-nuit-img")
+        githubImg.classList.toggle("g-jour-img")
 };
 }
 
