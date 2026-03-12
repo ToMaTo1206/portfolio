@@ -202,9 +202,6 @@ button img:active{
     margin: 10px;
 }
 
-.presentation p{
-    margin-left: 20px;
-}
 
 .presentation-sup{
     display: flex;
@@ -212,13 +209,14 @@ button img:active{
     justify-content: center;
     align-items: center;
     margin-top: 10px;
+    gap: 50px;
 }
 .presentation-sup a{
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 10px;
-    width: 80px;
+    width: 85px;
     height: 25px;
     object-fit: contain;
     text-decoration: none;
@@ -255,7 +253,6 @@ button img:active{
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
 .presentation-sup p img{
@@ -295,6 +292,7 @@ button img:active{
     display: flex;
     flex-direction: row;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 20px;
 }
 
