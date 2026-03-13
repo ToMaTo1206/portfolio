@@ -6,6 +6,12 @@ const githubImg = document.getElementById("githubImg");
 const cvButton = document.getElementById("cvButton");
 const cvImg = document.getElementById("cvImg");
 
+const mailButton = document.getElementById("mailButton");
+const mailImg = document.querySelector("#mailButton img");
+const linkedinButton = document.getElementById("linkedinButton");
+const linkedinImg = document.querySelector("#linkedinButton img");
+
+
 function textContent(){
     if (document.body.classList.contains("jour")) {
         iconMode.alt = "Passer au mode nuit";
@@ -20,6 +26,10 @@ function textContent(){
         githubImg.classList.toggle("g-jour-img")
         cvButton.classList.replace("g-jour", "g-nuit");
         cvImg.classList.replace("g-jour-img", "g-nuit-img");
+        mailButton.classList.replace("g-jour", "g-nuit");
+        mailImg.classList.replace("g-jour-img", "g-nuit-img");
+        linkedinButton.classList.replace("g-jour", "g-nuit");
+        linkedinImg.classList.replace("g-jour-img", "g-nuit-img");
 
     } else if (document.body.classList.contains("nuit")) {
         iconMode.alt = "Passer au mode jour";
@@ -34,6 +44,10 @@ function textContent(){
         githubImg.classList.toggle("g-jour-img")
         cvButton.classList.replace("g-nuit", "g-jour");
         cvImg.classList.replace("g-nuit-img", "g-jour-img");
+        mailButton.classList.replace("g-nuit", "g-jour");
+        mailImg.classList.replace("g-nuit-img", "g-jour-img");
+        linkedinButton.classList.replace("g-nuit", "g-jour");
+        linkedinImg.classList.replace("g-nuit-img", "g-jour-img");
 };
 }
 
