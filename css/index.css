@@ -376,7 +376,7 @@ button img:active{
     align-items: center;
     justify-content: center;
     padding: 15px;
-    border: 1px solid;
+    border: 2px solid;
     border-radius: 10px;
     background-color: #ffffff05;
     transition: transform 0.3s ease, background-color 0.3s ease;
