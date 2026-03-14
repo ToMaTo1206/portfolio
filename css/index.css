@@ -317,18 +317,6 @@ button img:active{
     overflow: hidden;
 }
 
-.hidden-left {
-  opacity: 0;
-  transform: translateX(-100px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-
-.hidden-right {
-  opacity: 0;
-  transform: translateX(100px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-
 .hidden-middle {
   opacity: 0;
   transition: opacity 1s ease-out, transform 1s ease-out;
@@ -651,6 +639,18 @@ footer{
         padding-left: 40px;
         padding-right: 40px;
     }
+
+    .hidden-left {
+        opacity: 0;
+        transform: translateX(-100px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+
+    .hidden-right {
+        opacity: 0;
+        transform: translateX(100px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
 }
 
 
@@ -759,18 +759,6 @@ footer{
     font-size: xx-small;
 }
 
-}
-
-.hidden-left {
-  opacity: 0;
-  transform: translateX(-100px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-
-.hidden-right {
-  opacity: 0;
-  transform: translateX(100px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
 .visible {
