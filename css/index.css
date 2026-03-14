@@ -408,7 +408,7 @@ button img:active{
     justify-content: center;
     border: 2px solid;
     border-radius: 20px;
-    background-color: #ffffff05;
+    background-color: rgba(15, 23, 42, 0.80);
     padding: 10px;
     width: 80%;
 }
@@ -424,6 +424,7 @@ button img:active{
     position: relative;
     display: inline-block;
     padding: 5px;
+    color: #f0e8d5;
 }
 
 .contact-div{
@@ -444,6 +445,7 @@ form{
     margin: 40px auto;
     flex-grow: 1;
     width: 100%;
+    color: #f0e8d5;
 }
 
 form label{
@@ -453,7 +455,7 @@ form label{
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     text-align: center;
-
+    color: #f0e8d5;
     width: 100%; 
     box-sizing: border-box;
 }
@@ -521,6 +523,7 @@ form button[type="submit"]:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    color: #f0e8d5;
 }
 
 .contact-div div {
