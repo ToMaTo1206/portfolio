@@ -225,6 +225,7 @@ button img:active{
     font-weight: 600;
     border: 2px solid #ff000028;
     font-size: small;
+    gap: 2px;
 }
 
 .g-nuit{
