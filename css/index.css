@@ -517,8 +517,13 @@ form button[type="submit"] {
     padding: 12px 20px;
     cursor: pointer;
     width: 100%;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: transform 0.3s ease, background-color 0.3s ease;
     margin-top: 10px;
+}
+
+form button[type="submit"]:hover {
+    transform: translateY(-4px);
+    background-color: #ffffff1a;
 }
 
 .contact-div form, 
