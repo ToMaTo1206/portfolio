@@ -280,6 +280,10 @@ button img:active{
     text-align: center;
 }
 
+#Parcours{
+    margin-top: 60px;
+}
+
 .date-exp{
     font-family: 'Montserrat', sans-serif;
     font-style: italic;
@@ -297,8 +301,8 @@ button img:active{
     gap: 20px;
 }
 
-#Projets{
-    margin-top: 60px;
+#Realisations{
+    margin-top: 40px;
 }
 
 .projets div{
@@ -358,7 +362,7 @@ button img:active{
 
 /*Outils*/
 #Competences{
-    margin-top: 60px;
+    margin-top: 40px;
 }
 
 .tools-grid{
@@ -367,7 +371,6 @@ button img:active{
     gap: 10px;
     width: 80%;
     max-width: 900px;
-    margin: 40px 0;
 }
 
 .tool-card {
@@ -401,7 +404,7 @@ button img:active{
 }
 
 .contact{
-    margin-top: 60px;
+    margin-top: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -631,6 +634,10 @@ footer{
         padding-right: 30px;
     }
 
+    #Parcours{
+        margin-top: 10px;
+    }
+
     .projets {
         flex-direction: column;
         align-items: center;
@@ -653,6 +660,13 @@ footer{
         opacity: 0;
         transform: translateX(100px);
         transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+    #Competences{
+        margin-top: 20px;
+    }
+
+    #Realisations{
+        margin-top: 0;
     }
 }
 
