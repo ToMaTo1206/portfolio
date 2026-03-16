@@ -393,6 +393,8 @@ button img:active{
 }
 
 .tool-card {
+    text-decoration: none;
+    color: inherit;
     display: flex;
     flex-direction: column;
     align-items: center;
